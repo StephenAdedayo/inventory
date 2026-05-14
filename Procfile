@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --no-input && python manage.py migrate && gunicorn invProject.wsgi
+web: python invProject/manage.py collectstatic --no-input && python invProject/manage.py migrate && gunicorn --chdir invProject invProject.wsgi
