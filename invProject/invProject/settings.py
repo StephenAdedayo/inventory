@@ -27,6 +27,10 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*'] # Railway handles the domain naming
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://inventory-production-6f40.up.railway.app',
+]
+
 # Application definition
 
 INSTALLED_APPS = [
