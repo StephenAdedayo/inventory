@@ -25,8 +25,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-temporary-key-for-loc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
+
 ALLOWED_HOSTS = ['*'] # Railway handles the domain naming
 
+# allow csrf token to work 
 CSRF_TRUSTED_ORIGINS = [
     'https://inventory-production-6f40.up.railway.app',
 ]
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
 ]
 
+# white noise allows serving of static files
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -124,7 +127,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# create staticfiles if images or other static files are added
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# for bootstrap styling
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
